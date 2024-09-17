@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug C++ file",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/hello",  // Path to your compiled executable
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb",  // Use lldb on macOS
+            "setupCommands": [
+                {
+                    "description": "Enable pretty-printing for lldb",
+                    "text": "settings set -- target.debugger-id lldb",
+                    "ignoreFailures": true
+                }
+            ],
+            "preLaunchTask": "build",  // The task to run before debugging
+            "miDebuggerPath": "/usr/bin/lldb",  // Path to lldb on macOS
+            "logging": { "engineLogging": true }
+        }
+    ]
+}
